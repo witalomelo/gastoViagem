@@ -2,6 +2,7 @@ package br.com.gastoviagem
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.gastoviagem.databinding.ActivityMainBinding
@@ -9,17 +10,23 @@ import br.com.gastoviagem.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
+
+    // função responsavel por fazer a criação da activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // View Binding
+//        findViewById<TextView>(R.id.button_calculate)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonCalculate.setOnClickListener(this)
     }
 
+
+    //função responsavel pelo onClick e executar a função calculate
     override fun onClick(view: View) {
         if (view.id == R.id.button_calculate) {
             calculate()
@@ -36,6 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         binding.editAutonomy.text.toString().toFloat() != 0f)
     }
 
+    //função calcular o valor gasto
     private fun calculate() {
 
         if (isValid()) {
