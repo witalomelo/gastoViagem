@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GastoViagem</string>
+    <string name="distancia">Distancia</string>
+    <string name="total_de_quilometros">Total de quilometros</string>
+</resources>
